@@ -56,7 +56,7 @@ class BottomNavigationComponent1State extends State<BottomNavigationComponent1> 
             items: [
               for (int i = 0; i < appStore.mBottomNavigationList.length; i++)
                 BottomNavigationBarItem(
-                  icon: cachedImage(mBottomMenuList![i].image, width: 20, height: 20, color: Theme.of(context).textTheme.titleMedium!.color),
+                  icon: cachedImage(mBottomMenuList![i].image, width: 20, height: 20, color: Theme.of(context).textTheme.subtitle1!.color),
                   activeIcon: cachedImage(mBottomMenuList![i].image, width: 20, height: 20, color: appStore.primaryColors),
                   label: mBottomMenuList![i].title.toString(),
                   backgroundColor:context.scaffoldBackgroundColor

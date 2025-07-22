@@ -54,12 +54,12 @@ class BottomNavigationComponent3State extends State<BottomNavigationComponent3> 
         width: 36,
         height: 36,
         alignment: Alignment.center,
-        decoration: currentIndex == pos ? BoxDecoration(shape: BoxShape.circle, color: appStore.primaryColors.withValues(alpha: 0.3)) : BoxDecoration(),
+        decoration: currentIndex == pos ? BoxDecoration(shape: BoxShape.circle, color: appStore.primaryColors.withOpacity(0.3)) : BoxDecoration(),
         child: cachedImage(
           icon,
           width: 20,
           height: 20,
-          color: currentIndex == pos ? appStore.primaryColors : Theme.of(context).textTheme.titleMedium!.color,
+          color: currentIndex == pos ? appStore.primaryColors : Theme.of(context).textTheme.subtitle1!.color,
         ),
       ),
     );
