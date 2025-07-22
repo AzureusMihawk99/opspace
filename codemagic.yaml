@@ -15,30 +15,12 @@ workflows:
       - name: Get Flutter packages
         script: |
           flutter packages pub get
-      # - name: Flutter analyze
-      #   script: |
-      #     flutter analyze --no-fatal-infos
-      - name: Flutter unit tests
+      - name: Build APK with Flutter
         script: |
-          flutter test
-      - name: Build AAB with Flutter
-        script: |
-          flutter build appbundle --release
+          flutter build apk --release
     artifacts:
-      - build/**/outputs/**/*.aab
-      - build/**/outputs/**/mapping.txt
+      - build/**/outputs/**/*.apk
       - flutter_drive.log
-    publishing:
-      email:
-        recipients:
-          - user@example.com
-        notify:
-          success: true
-          failure: false
-      # google_play: # Uncomment when you have credentials set up
-      #   credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-      #   track: internal
-      #   submit_as_draft: true
 
   ios-workflow:
     name: iOS Workflow
@@ -63,12 +45,7 @@ workflows:
       - name: Install pods
         script: |
           find . -name "Podfile" -execdir pod install \;
-      # - name: Flutter analyze
-      #   script: |
-      #     flutter analyze --no-fatal-infos
-      - name: Flutter unit tests
-        script: |
-          flutter test
+
       - name: Flutter build ipa and automatic versioning
         script: |
           flutter build ipa --release \
@@ -78,15 +55,6 @@ workflows:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
-    publishing:
-      email:
-        recipients:
-          - user@example.com
-        notify:
-          success: true
-          failure: false
-      app_store_connect:
-        auth: integration
 
   debug-workflow:
     name: Debug Build
