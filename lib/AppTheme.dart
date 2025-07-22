@@ -9,7 +9,7 @@ class AppTheme {
   static final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     primaryColor: appStore.primaryColors,
-    errorColor: Colors.red,
+    colorScheme: ColorScheme.fromSeed(seedColor: appStore.primaryColors, error: Colors.red),
     hoverColor: Colors.grey,
     fontFamily: GoogleFonts.poppins().fontFamily,
     appBarTheme: AppBarTheme(
@@ -17,10 +17,10 @@ class AppTheme {
      // brightness: appStore.primaryColors.isDark() ? Brightness.dark : Brightness.light,
     ),
     iconTheme: IconThemeData(color: Colors.black),
-    cardTheme: CardTheme(color: Colors.white),
+    cardTheme: CardThemeData(color: Colors.white),
     textTheme: TextTheme(
-      subtitle1: TextStyle(color: textColorSecondary),
-      subtitle2: TextStyle(color: textColorPrimary),
+      titleMedium: TextStyle(color: textColorSecondary),
+      titleSmall: TextStyle(color: textColorPrimary),
     ),
   ).copyWith(
     pageTransitionsTheme: PageTransitionsTheme(
@@ -34,18 +34,18 @@ class AppTheme {
 
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: Color(0xFF131d25),
-    errorColor: Color(0xFFCF6676),
+    colorScheme: ColorScheme.fromSeed(seedColor: appStore.primaryColors, error: Color(0xFFCF6676), brightness: Brightness.dark),
     appBarTheme: AppBarTheme(
       color: appStore.primaryColors,
       //brightness: appStore.primaryColors.isDark() ? Brightness.dark : Brightness.light,
     ),
     primaryColor: appStore.primaryColors,
     fontFamily: GoogleFonts.poppins().fontFamily,
-    cardTheme: CardTheme(color: Color(0xFF1D2939)),
+    cardTheme: CardThemeData(color: Color(0xFF1D2939)),
     iconTheme: IconThemeData(color: Colors.white70),
     textTheme: TextTheme(
-      subtitle1: TextStyle(color: Colors.white70),
-      subtitle2: TextStyle(color: Colors.white30),
+      titleMedium: TextStyle(color: Colors.white70),
+      titleSmall: TextStyle(color: Colors.white30),
     ),
   ).copyWith(
     pageTransitionsTheme: PageTransitionsTheme(
