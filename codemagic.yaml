@@ -4,10 +4,8 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
     environment:
-      android_signing:
-        - keystore_reference
       groups:
-        - google_play
+        - google_play # Optional: remove if you haven't set up this group
       flutter: stable
       java: 17
     scripts:
@@ -37,10 +35,10 @@ workflows:
         notify:
           success: true
           failure: false
-      google_play:
-        credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
-        track: internal
-        submit_as_draft: true
+      # google_play: # Uncomment when you have credentials set up
+      #   credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
+      #   track: internal
+      #   submit_as_draft: true
 
   ios-workflow:
     name: iOS Workflow
