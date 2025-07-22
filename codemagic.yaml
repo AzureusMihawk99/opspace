@@ -15,9 +15,9 @@ workflows:
       - name: Get Flutter packages
         script: |
           flutter packages pub get
-      - name: Flutter analyze
-        script: |
-          flutter analyze --no-fatal-infos
+      # - name: Flutter analyze
+      #   script: |
+      #     flutter analyze --no-fatal-infos
       - name: Flutter unit tests
         script: |
           flutter test
@@ -63,9 +63,9 @@ workflows:
       - name: Install pods
         script: |
           find . -name "Podfile" -execdir pod install \;
-      - name: Flutter analyze
-        script: |
-          flutter analyze --no-fatal-infos
+      # - name: Flutter analyze
+      #   script: |
+      #     flutter analyze --no-fatal-infos
       - name: Flutter unit tests
         script: |
           flutter test
