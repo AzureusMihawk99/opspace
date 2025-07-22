@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "398589196927",
+    "project_id": "opspace-91381",
+    "storage_bucket": "opspace-91381.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398589196927:android:bf92980ea48fe891691d4a",
+        "android_client_info": {
+          "package_name": "com.opspacedz.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm7HPxEyeO1kaDrsWw0a9PYhJPdyH3uK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
